@@ -1,0 +1,109 @@
+img {
+    height: 200px;
+    width: auto;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: auto;
+    position: relative;
+    font-size: larger;
+}
+
+/* .mini-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(155, 147, 147);
+    width: 50%;
+    display: flex;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px #0003, 0 6px 20px #00000030;
+    background-color: #a2a1a180;
+} */
+
+.mini-container{
+    display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 15px;
+  width: 70%;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #0003,0 6px 20px #00000030;
+  background-color: #a2a1a180;
+}
+.input-style{
+    width: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#Red{
+    box-shadow: 0px 0px 15px #d22b2b;   
+}
+
+#Green{
+    box-shadow: 0px 0px 15px #14ef00;   
+}
+
+#Blue{
+    box-shadow: 0px 0px 15px #0044ef;   
+}
+
+#Purple{
+    box-shadow: 0px 0px 15px #9001d2;   
+}
+
+#Yellow{
+    box-shadow: 0px 0px 15px #e9e900;   
+}
+
+#Orange{
+    box-shadow: 0px 0px 15px #ef7b00;   
+}
+
+#Pink{
+    box-shadow: 0px 0px 15px #ef00e7;   
+}
+
+#Brown{
+    box-shadow: 0px 0px 15px #8f4f00;   
+}
+
+#rainbow{
+    box-shadow:0px 0px 5px #4c0082b6,0px 0px 12px #0000ff71,0px 0px 8px #00ff007d,0px 0px 11px #ffff0093, 0px 0px 14px #ff8000d7, 0px 0px 17px #eb1818af, 0px 0px 20px 5px #0000;   
+}
+
+
+li{
+    list-style: none;
+    text-align: left;
+}
+
+.button-style{
+    border-radius: 8px;
+  border: 1px solid transparent;
+  padding: .6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f8f5f5;
+  cursor: pointer;
+  transition: border-color .25s;
+}
+
+input[type="submit"]:hover{
+    border-color: #000000;
+    box-shadow: 10px 10px 10px #00000030;
+    cursor: pointer;
+}

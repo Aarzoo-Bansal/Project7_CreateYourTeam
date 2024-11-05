@@ -1,0 +1,44 @@
+.info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
+
+h3{
+    padding: 10px;
+    margin: 10px;
+}
+
+#Red{
+    box-shadow: 0px 0px 15px #d22b2b;   
+}
+
+#Green{
+    box-shadow: 0px 0px 15px #14ef00;   
+}
+
+#Blue{
+    box-shadow: 0px 0px 15px #0044ef;   
+}
+
+#Purple{
+    box-shadow: 0px 0px 15px #9001d2;   
+}
+
+#Yellow{
+    box-shadow: 0px 0px 15px #e9e900;   
+}
+
+#Orange{
+    box-shadow: 0px 0px 15px #ef7b00;   
+}
+
+#Pink{
+    box-shadow: 0px 0px 15px #ef00e7;   
+}
+
+#Brown{
+    box-shadow: 0px 0px 15px #8f4f00;   
+}

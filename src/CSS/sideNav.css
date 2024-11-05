@@ -1,0 +1,28 @@
+.sideNav-css{
+    height: 100%;
+  width: 12%;
+  position: fixed;
+  font-size: larger;
+  font-weight: bolder;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #c4c0c4;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+a{
+    color: rgb(11, 11, 11);
+    margin: 20px;
+    font-weight: 500;
+    text-decoration: inherit;
+}
+
+.single-img{
+    position: relative;
+  bottom: 0px;
+  margin-top: 60vh;
+  
+}

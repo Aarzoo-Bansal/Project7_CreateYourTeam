@@ -1,0 +1,62 @@
+span {
+    
+    color: #000;
+    padding: 3px;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px  #8a8181;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: initial;
+}
+
+
+.team-card {
+    border-radius: 10px;
+    border-style: double;
+    border-color: #00000043;
+    height: auto;
+    margin: 20px;
+    padding: 25px;
+    text-align: center;
+    width: 300px;
+    background-color: #e8e6e6;
+}
+
+#Red {
+    box-shadow: 15px -20px 15px #d22b2b;
+}
+
+#Green {
+    box-shadow: 15px -20px 15px #14ef00;
+}
+
+#Blue {
+    box-shadow: 15px -20px 15px #0044ef;
+}
+
+#Purple {
+    box-shadow: 15px -20px 15px #9001d2;
+}
+
+#Yellow {
+    box-shadow: 15px -20px 15px #e9e900;
+}
+
+#Orange {
+    box-shadow: 15px -20px 15px #ef7b00;
+}
+
+#Pink {
+    box-shadow: 15px -20px 15px #ef00e7;
+}
+
+#Brown {
+    box-shadow: 15px -20px 15px #8f4f00;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    flex-wrap: wrap;
+}
