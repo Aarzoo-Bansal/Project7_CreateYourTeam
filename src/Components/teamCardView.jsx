@@ -13,6 +13,7 @@ function teamCardView(props) {
             <h3>Head Chef: <span>{props.headChef}</span></h3>
             <h3>Team Color: <span>{props.teamColor}</span></h3>
             <h3>Number of Members: <span>{props.numberOfMembers}</span></h3>
+            <Link to={`/edit/${props.id}`}><input type="submit" value="Make changes to the team!" className="button-style" /></Link>
             </div>
       
     </div>

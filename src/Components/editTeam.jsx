@@ -1,22 +1,69 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SideNav from './sideNav'
 import { useParams } from "react-router-dom";
 import '/src/css/editTeam.css'
+import { supabase } from '../../Client'
 
 function editTeam() {
-    const [teams, setTeams] = useState({ teamName: '', headChef: '', teamColor: '' });
+    const [teams, setTeams] = useState([]);
+    const [newTeamDetails, setNewTeamDetails] = useState({ teamName: '', headChef: '', teamColor: '' });
     const {teamId} = useParams();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setTeams((prev) => {
+        setNewTeamDetails((prev) => {
             return {
                 ...prev,
                 [name]: value
             }
         })
     }
+
+    const updateData = async (event) => {
+        event.preventDefault();
+
+        await supabase
+        .from('OverCookedTeams')   
+        .update({
+            team_name: newTeamDetails.teamName,
+            head_chef: newTeamDetails.headChef,
+            team_color: newTeamDetails.teamColor,
+            number_of_members: newTeamDetails.teamMemberCount
+        }) 
+        .eq('id', teamId)
+
+        alert("Team updated successfully! 🎉🥳");
+        window.location.href = '/';
+    }
+
+    const deleteData = async (event) => {
+        event.preventDefault();
+
+        await supabase
+        .from('OverCookedTeams')
+        .delete()
+        .eq('id', teamId)
+
+        alert("Team deleted successfully! 🎉🥳")
+        window.location.href = '/';
+    }
+
+    useEffect(() => {
+        const getTeamDetails = async () => {
+            console.log( {teamId})
+            
+            const { data } = await supabase
+                .from('OverCookedTeams')
+                .select()
+                .eq('id', teamId) 
+
+                setTeams(data)
+                console.log("data" + data)
+        }
+
+        getTeamDetails().catch(console.error)
+    }, [])
     return (
         <div>
             <div>
@@ -27,13 +74,22 @@ function editTeam() {
                     <h1>Update your Team!</h1>
                     <img src="/src/assets/createTeam.png" />
                     <h2>Current Team Info:</h2>
-                    <div className='info-container'> 
+                   
+                    {teams && teams.length > 0 ? (teams.map((team) => 
+                    <div className='info-container'>
+                        <h3>Name: <span>{team.team_name}</span></h3>
+                        <h3>Head Chef: <span>{team.head_chef}</span></h3>
+                        <h3>Team Color: <span>{team.team_color}</span></h3>
+                        <h3>Number of Members: <span>{team.number_of_members}</span></h3>
+                    </div>)) 
+                    : (<div></div>)}
+                    {/* <div > 
                         
-                        <h3>Name: </h3>
+                        <h3>Name: {teams.team_name}</h3>
                         <h3>Head Chef: </h3>
                         <h3>Team Color: </h3>
                         <h3>Number of Members: </h3>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
@@ -109,7 +165,8 @@ function editTeam() {
                 </div>
 
             </form>
-            <input type="submit" value="Create your Team!" className="button-style" />
+            <input type="submit" value="Update this Team!" className="button-style" onClick={updateData}/>
+            <input type="submit" value="Delete this Team!" className="button-style" onClick={deleteData}/>
 
         </div>
     )

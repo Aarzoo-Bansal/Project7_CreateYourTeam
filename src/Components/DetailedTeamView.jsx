@@ -50,8 +50,7 @@ function DetailedTeamView(props) {
 <Link to={`/edit/${team.id}`}><input type="submit" value="Make changes to the team!" className="button-style" /></Link>
                     </div>
                         
-                    )
-                        ) : (<div></div>)}
+                    )) : (<div></div>)}
                 </div>
                 </div>
             </div>
